@@ -9,7 +9,8 @@ const Badge = styled.span`
   justify-content: center;
   /* Colors */
   background-color: ${({votes}) => 
-  votes > 9 ? "rgba(0,100,0,0.3)" : "rgba(0, 0, 0, 0.3)"};
+  votes > 9 ? "rgba(0,100,0,0.3)" : "rgba(0, 0, 0, 0.3)"
+  };
   color: #fff;
   /* Rounded border */
   border-radius: 9999px;
