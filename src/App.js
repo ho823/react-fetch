@@ -1,18 +1,36 @@
 import "./App.css";
-import './Wilder'
+import styled from "styled-components";
 import Wilder from './Wilder';
+import { useState } from "react";
+
+const Container = styled.div `
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 24px;
+`;
+
+const CardRow = styled.section`
+  display: grid;
+  grid-template-columns: repeat(3, 32%);
+  justify-content: space-between;
+`;
 
 function App() {
+  const [wilder, setWilder] = useState([]);
   return (
     <div>
       <header>
-      <div className="container">
+      <Container>
         <h1>Wilders Book</h1>
-      </div>
+      </Container>
       </header>
-      <main className="container">
+      <Container>
         <h2>Wilders</h2>
-        <section className="card-row">
+        <CardRow>
+          {wilder.map(item => (
+            <Wilder />
+          ))}
           <Wilder 
             name="Jane Doe" 
             resume="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -35,12 +53,12 @@ function App() {
             commodo consequat."
           />
 
-        </section>
-      </main>
+        </CardRow>
+      </Container>
       <footer>
-        <div className="container">
+        <Container>
           <p>&copy; 2020 Wild Code School</p>
-        </div>
+        </Container>
       </footer>
     </div>
   );
